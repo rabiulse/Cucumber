@@ -3,11 +3,26 @@ package stepdefinitions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.*;
 
 public class Login {
 	
 	public static WebDriver driver;
+	@Before
+	public void setup()
+	{
+		System.out.println("browswer need to open:");
+		
+	}
+	
+	@After
+	public void teardown()
+	{
+		System.out.println("browswer need to closed:");
+		
+	}
 	
 	@Given("I Navigate to Login page")
 	public void i_navigate_to_login_page() {
@@ -25,6 +40,12 @@ public class Login {
 	@When("I enter the valid email address")
 	public void i_enter_the_valid_email_address() {
 		System.out.println("enter email: ");
+	    
+	}
+	
+	@When("I enter the invalid email address")
+	public void i_enter_the_invalid_email_address() {
+		System.out.println("enter invalid email: ");
 	    
 	}
 
@@ -46,6 +67,14 @@ public class Login {
 		driver.quit();
 		
 		System.out.println("Succssfully close the browser: ");
+	
+	}
+	
+	@Then("I should get not successful Message")
+	public void i_shouldNOT_get_successful_message() {
+						
+		System.out.println("I should get not successful Message: ");
+		driver.quit();
 	
 	}
 
