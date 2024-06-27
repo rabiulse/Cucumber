@@ -1,5 +1,7 @@
 package stepdefinitions;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -52,13 +54,41 @@ public class homePage {
 		System.out.println("Home page is displayed: ");
 
 	}
-	
+
 	@Then("Card details displayed")
-	public void Card_displayed()
-	{
+	public void Card_displayed() {
 		System.out.println("Card details displayed ");
-		
+
+	}
+
+	@Given("User land on login page")
+
+	public void user_land_on_login_page() {
+		System.out.println(" User land on login page : ");
+
+	}
+
+	@When("User fill the data with the below")
+
+	public void filluserRegistration_Data(List<String> data) {
+		String fitstname = data.get(0);
+		String lastname = data.get(1);
+		String phone = data.get(2);
+		String email = data.get(3);
+
+		System.out.println(" fitstname: " + fitstname + " last name:" + lastname);
+
 	}
 	
+	
 
+	 @Then("Registration is successfull")
+
+		public void Registration_is_successfull() {
+			System.out.println(" Registration is successfull ");
+
+		}
+
+	 
+	
 }

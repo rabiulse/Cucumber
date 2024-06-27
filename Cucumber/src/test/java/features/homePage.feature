@@ -9,7 +9,7 @@ And I click on Login Button
 Then I should get successful Message
 And I validate the Homepage logo display
 
-@SmokeTest
+@RegressionTest
 Scenario Outline: User page default login
 Given User is on login page
 When User login into application with "<username>" and "<password>"
@@ -23,4 +23,16 @@ Examples:
  |TestUser2|TestPass02|
  |TestUser3|TestPass03|
  |TestUser4|TestPass04|
+ 
+ @SmokeTest
+ Scenario: Fill the user registration form with many data
+ 
+ Given User land on login page
+ When  User fill the data with the below 
+ |rabiul|
+ |uzzaman|
+ |9674976407|
+ |rabiul.print@gmail.com|
+ 
+ Then  Registration is successfull
  
